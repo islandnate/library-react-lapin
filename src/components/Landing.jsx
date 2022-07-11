@@ -10,9 +10,11 @@ const Landing = () => {
                     <div className="header__description">
                         <h1>Bainbridge Island's most notable online library platform</h1>
                         <h2>Find your dream book with <span className="purple">Library</span></h2>
-                        <Link to="#features">
-                            <button className="btn">Browse Books</button>
-                        </Link>
+                        <li onClick={() => window.location.reload()}>
+                            <Link to="/books">
+                                <button className="btn">Browse Books</button>
+                            </Link>
+                        </li>
                     </div>
                     <figure className="header__img--wrapper">
                         <img src={UndrawBooks} alt="" />

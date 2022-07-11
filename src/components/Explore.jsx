@@ -9,9 +9,11 @@ const Explore = () => {
                     <h2 className="section__title">
                         Explore more <span className="purple">Books</span>
                     </h2>
-                    <Link to="/books">
-                        <button className="btn">Explore Books</button>
-                    </Link>
+                    <li onClick={() => window.location.reload()}>
+                        <Link to="/books">
+                            <button className="btn">Explore Books</button>
+                        </Link>
+                    </li>
                 </div>
             </div>
         </section>
