@@ -3,7 +3,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import LibraryLogo from '../assets/Library.svg'
 import { Link } from 'react-router-dom';
 
-const Nav = () => {
+const Nav = ({ numberOfItems }) => {
     function openMenu(){
         document.body.classList += "menu--open"
     }
@@ -13,16 +13,16 @@ const Nav = () => {
     return (
         <nav>
             <div className="nav__container">
-                <Link to="/">
+                <Link to="/library-react-lapin">
                     <img src={LibraryLogo} alt="" className='logo'/>
                 </Link>
                 <ul className="nav__links">
-                    <li className="nav__list" onClick={() => window.location.reload()}>
-                        <Link to="/" className="nav__link">
+                    <li className="nav__list">
+                        <Link to="/library-react-lapin" className="nav__link">
                             Home
                         </Link>
                     </li>
-                    <li className="nav__list" onClick={() => window.location.reload()}>
+                    <li className="nav__list">
                         <Link to="/books" className="nav__link">
                             Books
                         </Link>
@@ -30,11 +30,11 @@ const Nav = () => {
                     <button className='btn__menu' onClick={openMenu}>
                        <FontAwesomeIcon icon="bars" />  
                     </button>
-                    <li className="nav__icon" onClick={() => window.location.reload()}>
+                    <li className="nav__icon">
                         <Link to="/cart"  className="nav__link">
                             <FontAwesomeIcon icon="shopping-cart" />
                         </Link>
-                        <span className="cart__length">2</span>
+                        {numberOfItems> 0 && <span className="cart__length">{numberOfItems}</span>}
                     </li>
                 </ul>
                 <div className="menu__backdrop">
